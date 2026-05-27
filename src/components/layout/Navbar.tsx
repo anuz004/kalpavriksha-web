@@ -3,19 +3,13 @@ import { styles } from "../../constants/styles";
 import { navLinks } from "../../constants";
 import { menu, close } from "../../assets";
 import { config } from "../../constants/config";
-
-const Navbar = () => {
-  const [active, setActive] = useState<string | null>();
-  const [toggle, setToggle] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      if (scrollTop > 100) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
+    <nav
+      className={`$ {
+        scrolled
+          ? "fixed top-0 left-0 w-full z-50 shadow-lg"
+          : "absolute w-full z-10"
+      } flex items-center py-5 px-6 transition-all duration-500 ease-in-out backdrop-blur-md bg-opacity-80 bg-[#1a1832]`}
+    >
         setActive("");
       }
     };

@@ -37,8 +37,7 @@ const ExperienceCard: React.FC<TExperience> = (experience) => {
       <div>
         <h3 className="text-[24px] font-bold text-white">{experience.title}</h3>
         <p
-          className="text-secondary text-[16px] font-semibold"
-          style={{ margin: 0 }}
+          className="text-secondary text-[16px] font-semibold m-0"
         >
           {experience.companyName}
         </p>
@@ -60,17 +59,16 @@ const ExperienceCard: React.FC<TExperience> = (experience) => {
 
 const Experience = () => {
   return (
-    <>
-      <Header useMotion={true} {...config.sections.experience} />
-
-      <motion.div variants={fadeIn("", "", 0.2, 1)} className="mt-20 flex flex-col">
-        <VerticalTimeline lineColor="#a0522d">
-          {experiences.map((experience, index) => (
-            <ExperienceCard key={index} {...experience} />
-          ))}
-        </VerticalTimeline>
-      </motion.div>
-    </>
+    <motion.div
+      variants={fadeIn("", "", 0.1, 1)}
+      className="mt-1"
+    >
+      <VerticalTimeline lineColor="#a0522d">
+        {experiences.map((experience, index) => (
+          <ExperienceCard key={index} {...experience} />
+        ))}
+      </VerticalTimeline>
+    </motion.div>
   );
 };
 

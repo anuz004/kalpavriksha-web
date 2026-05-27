@@ -26,8 +26,7 @@ const App = () => {
     <BrowserRouter>
       <div className="relative z-0 bg-primary min-h-screen">
         <div
-          className="bg-hero-pattern bg-cover bg-no-repeat"
-          style={{ backgroundPosition: "center 1px" }}
+          className="bg-hero-pattern bg-cover bg-no-repeat bg-[position:center_1px]"
         >
           <Navbar />
           <Hero />

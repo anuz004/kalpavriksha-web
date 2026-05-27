@@ -4,13 +4,13 @@ import mobileView from "../../assets/mobile-view.png";
 
 const Hero = () => {
   return (
-    <section className="relative mx-auto min-h-[110vh] w-full overflow-hidden pb-16">
+    <section className="relative mx-auto min-h-screen md:min-h-[110vh] w-full overflow-hidden pb-16">
       <picture className="pointer-events-none absolute inset-0 -z-10 h-full w-full">
         <source media="(max-width: 640px)" srcSet={mobileView} />
         <img
           src={herobg}
           alt="Hero background"
-          className="h-full w-full object-contain object-center"
+          className="max-h-full w-full object-contain object-center"
         />
       </picture>
 
