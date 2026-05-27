@@ -15,28 +15,19 @@ interface IServiceCard {
 }
 
 const ServiceCard: React.FC<IServiceCard> = ({ index, title, icon }) => (
-  <Tilt
-    glareEnable
-    tiltEnable
-    tiltMaxAngleX={30}
-    tiltMaxAngleY={30}
-    glareColor="#aaa6c3"
-  >
-    <div className="max-w-[250px] w-full xs:w-[250px]">
+  <Tilt glareEnable tiltEnable tiltMaxAngleX={20} tiltMaxAngleY={20} glareColor="#aaa6c3">
+    <div className="max-w-[270px] w-full xs:w-[270px]">
       <motion.div
-        variants={fadeIn("right", "spring", index * 0.5, 0.75)}
+        variants={fadeIn("right", "spring", index * 0.4, 0.75)}
+        whileHover={{ scale: 1.03 }}
+        whileTap={{ scale: 0.98 }}
+        transition={{ type: "spring", stiffness: 200, damping: 12 }}
         className="bg-gradient-to-br from-[#7b3f00] via-[#a0522d] to-[#7b3f00] shadow-card w-full rounded-[20px] p-[1px]"
       >
-        <div className="bg-[#a0522d] flex min-h-[280px] flex-col items-center justify-evenly rounded-[20px] px-12 py-5">
-          <img
-            src={icon}
-            alt="web-development"
-            className="h-16 w-16 object-contain"
-          />
+        <div className="bg-[#a0522d] flex min-h-[280px] flex-col items-center justify-evenly rounded-[20px] px-8 py-6">
+          <img src={icon} alt={title} className="h-16 w-16 object-contain" />
 
-          <h3 className="text-center text-[20px] font-bold text-white">
-            {title}
-          </h3>
+          <h3 className="text-center text-[20px] font-bold text-white">{title}</h3>
         </div>
       </motion.div>
     </div>
@@ -55,7 +46,7 @@ const About = () => {
         {config.sections.about.content}
       </motion.p>
 
-      <div className="mt-20 flex flex-wrap gap-10 max-sm:justify-center">
+      <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 justify-center">
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
         ))}

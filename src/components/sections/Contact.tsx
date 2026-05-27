@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 
-import EarthCanvas from "../canvas/Earth";
 import { SectionWrapper } from "../../hoc";
 import { slideIn } from "../../utils/motion";
 import { config } from "../../constants/config";
@@ -78,10 +77,10 @@ const Contact = () => {
   };
 
   return (
-    <div className="flex flex-col-reverse gap-8 xl:gap-10 overflow-hidden xl:mt-12 xl:flex-row items-center xl:items-stretch">
+    <div className="flex flex-col gap-8 xl:gap-10 overflow-hidden xl:mt-12 items-center xl:items-stretch">
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
-        className="bg-[#7b3f00] w-full xl:w-[69%] rounded-2xl p-4 sm:p-8 md:p-10 flex flex-col justify-center"
+        className="bg-[#7b3f00] w-full rounded-2xl p-4 sm:p-8 md:p-10 flex flex-col justify-center"
       >
         <Header useMotion={false} {...config.contact} />
 
@@ -118,17 +117,6 @@ const Contact = () => {
               <span className="text-[#f5deb3] font-medium mr-2">GSTIN :</span>
               <span className="text-white text-base sm:text-lg">{contactDetails.gstin}</span>
             </div>
-          </div>
-        </div>
-      </motion.div>
-
-      <motion.div
-        variants={slideIn("right", "tween", 0.2, 1)}
-        className="flex items-center justify-center h-[220px] sm:h-[300px] md:h-[400px] xl:h-[450px] xl:w-[32%] rounded-2xl"
-      >
-        <div className="w-full flex items-center justify-center">
-          <div className="w-[160px] h-[160px] sm:w-[220px] sm:h-[220px] md:w-[300px] md:h-[300px] xl:w-[350px] xl:h-[350px]">
-            <EarthCanvas scale={0.7} />
           </div>
         </div>
       </motion.div>

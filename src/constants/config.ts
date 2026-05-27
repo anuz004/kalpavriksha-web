@@ -45,8 +45,10 @@ export const config: TConfig = {
     email: "avkalpavriksha@gmail.com",
   },
   hero: {
-    name: "",
-    p: [""],
+    name: "Kalpavriksha Advance Ventures",
+    p: [
+      "Delivering trusted trading, investment, real estate, and import-export solutions for private and government partners.",
+    ],
   },
   contact: {
     p: "Get in touch with our",

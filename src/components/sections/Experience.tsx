@@ -1,4 +1,6 @@
 import React from "react";
+import { motion } from "framer-motion";
+import { fadeIn } from "../../utils/motion";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -61,13 +63,13 @@ const Experience = () => {
     <>
       <Header useMotion={true} {...config.sections.experience} />
 
-      <div className="mt-20 flex flex-col">
-        <VerticalTimeline lineColor="#000">
+      <motion.div variants={fadeIn("", "", 0.2, 1)} className="mt-20 flex flex-col">
+        <VerticalTimeline lineColor="#a0522d">
           {experiences.map((experience, index) => (
             <ExperienceCard key={index} {...experience} />
           ))}
         </VerticalTimeline>
-      </div>
+      </motion.div>
     </>
   );
 };

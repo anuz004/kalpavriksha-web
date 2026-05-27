@@ -16,19 +16,21 @@ const FeedbackCard: React.FC<{ index: number } & TTestimonial> = ({
 }) => (
   <motion.div
     variants={fadeIn("", "spring", index * 0.5, 0.75)}
-    className="bg-white xs:w-[320px] w-full rounded-3xl p-10"
+    whileHover={{ scale: 1.02 }}
+    transition={{ type: "spring", stiffness: 200, damping: 14 }}
+    className="bg-white xs:w-[320px] w-full rounded-3xl p-8 hover:shadow-lg"
+    role="article"
+    aria-label={`Testimonial from ${name}`}
   >
-    <p className="text-[48px] font-black text-[#222]">"</p>
+    <p className="text-[40px] font-black text-[#222] leading-none">“</p>
 
-    <div className="mt-1">
-      <p className="text-[18px] tracking-wider text-[#222]">{testimonial}</p>
+    <div className="mt-2">
+      <p className="text-[17px] tracking-wider text-[#222]">{testimonial}</p>
 
-      <div className="mt-7 flex items-center justify-between gap-1">
+      <div className="mt-6 flex items-center justify-between gap-1">
         <div className="flex flex-1 flex-col">
-          <p className="text-[16px] font-medium text-[#222]">
-            <span className="blue-text-gradient"></span> {name}
-          </p>
-          <p className="text-[#666] mt-1 text-[12px]">
+          <p className="text-[16px] font-semibold text-[#222]">{name}</p>
+          <p className="text-[#666] mt-1 text-[13px]">
             {designation} {company}
           </p>
         </div>
